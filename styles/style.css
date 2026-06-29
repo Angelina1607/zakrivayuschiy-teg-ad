@@ -55,6 +55,8 @@
   background-color: #fff;
   border: solid 2px #000;
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-header {
@@ -67,13 +69,98 @@
   margin: 27px 25px 0;
 }
 
-.card-button {
-  margin: 25px 0;
+.buttons {
+  align-self: end;
+  display: flex;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  width: 27px;
+  align-items: center;
+}
+
+.card__like-button {
+  margin: 25px 25px;
+  outline: solid 1px #000;
+  background-color: transparent;
+  width: 130px;
+  height: 38px;
 }
 
 .card-image {
+  position: relative;
+  overflow: hidden;
+  outline: solid 2px #000;
+}
+
+.image {
   width: 100%;
 }
+
+.image-grayscale {
+  filter: grayscale(70%);
+}
+
+.image-contrast {
+  filter: saturate(250%);
+}
+
+.image-sepia {
+  filter: sepia(0.9);
+}
+
+.image-invert {
+  filter: invert(100%) contrast(60%);
+}
+
+.image-hue-rotate {
+  filter: hue-rotate(20deg);
+}
+
+.image-blur {
+  filter: blur(17px);
+}
+
+.image-invert-blur {
+  filter: hue-rotate(85deg) blur(2px) contrast(70%) sepia(0.2);
+}
+
+.watermark {
+  position: absolute;
+  right: 0;
+  padding: 25px;
+  z-index: 1;
+  font-size: 14px;
+  font-family: var(--accent-font-family);
+  mix-blend-mode: hard-light;
+  text-shadow:
+  -1px 0 var(--watermark-stroke), 
+  0 1px var(--watermark-stroke), 
+  1px 0 var(--watermark-stroke), 
+  0 -1px var(--watermark-stroke);
+}
+
+.button__text {
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+.save-button {
+
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+@supports((text-stroke: 1px var(--watermark-stroke)) or (-webkit-text-stroke: 1px var(--watermark-stroke))) {
+  .watermark {
+    -webkit-text-stroke: 1px var(--watermark-stroke);
+    text-stroke: 1px var(--watermark-stroke);
+    text-shadow: none;
+  }
+} 
 
 @media(width<=375px) {
   .heading {

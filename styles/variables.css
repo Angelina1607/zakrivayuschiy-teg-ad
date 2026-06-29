@@ -4,4 +4,5 @@
     --accent-font-family: 'PressStar2P';
     --text-weight: 400;
     --header-weight: 700;
+    --watermark-stroke: rgb(255 255 255 / 0.5);
 }
