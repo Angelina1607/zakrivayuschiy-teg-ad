@@ -149,9 +149,16 @@
 }
 
 .save-button {
-
-  margin: 0 auto;
+  width: clamp(306px, 295.79px + 2.72vw, 335px);
+  height: 51px;
+  padding: 15px 0;
+  margin: 0 auto 100px;
+  display: block;
   background-color: #fff;
+}
+
+.floppy-icon {
+  margin-right: 8px;
 }
 
 @supports((text-stroke: 1px var(--watermark-stroke)) or (-webkit-text-stroke: 1px var(--watermark-stroke))) {
@@ -169,5 +176,12 @@
   }
   .card {
     width: 100%;
+  }
+  .floppy-icon {
+    margin: 0 auto;
+    display: block;
+  }
+  .save-button {
+    height: 80px;
   }
 }
