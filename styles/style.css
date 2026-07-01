@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -72,21 +71,37 @@
 .buttons {
   align-self: end;
   display: flex;
+  gap: 4px;
+  margin: 25px;
+  align-items: center;
 }
 
 .card__icon-button {
   background-color: transparent;
   border: none;
-  width: 27px;
-  align-items: center;
+  height: 38px;
 }
 
 .card__like-button {
-  margin: 25px 25px;
   outline: solid 1px #000;
   background-color: transparent;
   width: 130px;
   height: 38px;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: solid 2px #000;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px #000;
+  transition: box-shadow 0.3s ease;
 }
 
 .card-image {
@@ -159,6 +174,12 @@
   background-color: #fff;
 }
 
+.save-button:focus {
+  outline: none;
+  box-shadow: 2px 2px #000;
+  transition: box-shadow 0.3s ease;
+}
+
 .floppy-icon {
   margin-right: 8px;
   transform: translate(39, 39);
@@ -196,6 +217,12 @@
   height: 38px;
   display: block;
   grid-area: button;
+}
+
+.dialog-button:focus {
+  outline: none;
+  box-shadow: 2px 2px #000;
+  transition: box-shadow 0.3s ease;
 }
 
 .dialog__floppy-icon {
